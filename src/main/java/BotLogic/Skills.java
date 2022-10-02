@@ -1,8 +1,8 @@
-package Skills;
+package BotLogic;
 
 public class Skills {
 
-    private String toCommands(){
+    private static String toCommands(){
         return "Bot\s commands:\n" +
                 "/start - start the bot \n" +
                 "/help  - show commands\n" +
@@ -15,21 +15,21 @@ public class Skills {
                 "/format - выбрать формат файла\n" +
                 "/convert - конвертировать файл в выбранный формат\n";
     }
-    public String toDefaultAnswer(){
+    public static String toDefaultAnswer(){
         return "Я тебя не понимаю, напиши /help, чтобы увидеть список команд\n" +
                 "I don't understand you, type /help to see a list of commands\n";
     }
-    private String toStart(){
+    private static String toStart(){
         return "Hi,I'm a converter bot. I can convert files from one extension to another. Type /help to see a list of commands\n" +
                 "\n" +
                 "Привет, я Бот-конвертер. Я умею конвертировать файлы из одного расширения в другое. Напиши /help, чтобы увидеть список команд";
     }
-    private String CommandComingSoon(){
+    private static String CommandComingSoon(){
         return "Command Coming Soon\n" +
                 "\n" +
                 "Команда скоро появится";
     }
-    public String useCommand(String command){
+    public static String useCommand(String command){
         return switch (command){
             case "/start" -> toStart();
             case "/help" -> toCommands();
@@ -38,5 +38,6 @@ public class Skills {
             default -> toDefaultAnswer();
         };
         }
+
     }
 

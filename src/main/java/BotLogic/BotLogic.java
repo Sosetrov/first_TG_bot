@@ -1,5 +1,5 @@
 package BotLogic;
-
+import BotLogic.Skills;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -26,11 +26,22 @@ public class BotLogic extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        // We check if the update has a message and the message has text
+        // Проверка на сообщение или на текст в сообщении
+        SendMessage message = new SendMessage();
+        message.setChatId(update.getMessage().getChatId());
         if (update.hasMessage() && update.getMessage().hasText()) {
-            SendMessage message = new SendMessage(); // Create a SendMessage object with mandatory fields
-            message.setChatId(update.getMessage().getChatId().toString());
+            StringBuilder answer = new StringBuilder("");
+            String userTextMessage;
             message.setText(update.getMessage().getText());
+            String messageString = update.getMessage().getText();
+            String[] messageWords = messageString.split(" ");
+            if (messageWords[0].charAt(0) == '/') {
+                answer.append(Skills.useCommand(messageWords[0]));
+            } else {
+                // формируем ответ на сообщение
+                answer.append(Skills.toDefaultAnswer());
+            }
+            message.setText(answer.toString());
 
             try {
                 execute(message); // Call method to send the message
@@ -39,4 +50,4 @@ public class BotLogic extends TelegramLongPollingBot {
             }
         }
     }
-    }
+}

@@ -1,6 +1,7 @@
 package org.stepanandmilana;
 
 import BotLogic.BotLogic;
+import cmd.kek;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
@@ -21,5 +22,8 @@ public class App
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+        System.out.println("Hello, i'm bot");
+        kek cmd = new kek();
+        cmd.responseForCMD();
     }
 }

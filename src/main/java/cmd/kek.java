@@ -1,27 +1,26 @@
 package cmd;
-    import Skills.Skills;
+    import BotLogic.Skills;
     import java.util.Scanner;
+
 public class kek {
     private Scanner input;
-    private Skills Skills;
-
-    public void responseForCDM() {
+    private Skills skills;
+   public kek(){
+       skills = new Skills();
+       input = new Scanner(System.in);
+   }
+    public void responseForCMD() {
         while(true) {
             String messageFromCMD = input.nextLine();
-            StringBuilder answer = new StringBuilder("");
+            StringBuilder Answer = new StringBuilder("");
             String[] messageWords = messageFromCMD.split(" ");
             if (messageWords[0].charAt(0) == '/') {
-                if(messageWords.length == 1){
-                    answer.append(Skills.useCommand(String.valueOf(messageWords)));
-                } else{
-                    // реализовать передачу остальных слов из запроса в метод useCommand
-                    continue;
-                }
+                    Answer.append(Skills.useCommand(messageWords[0]));
             }else {
-                answer.append(Skills.toDefaultAnswer());
+                Answer.append(Skills.toDefaultAnswer());
             }
 
-            System.out.println(answer);
+            System.out.println(Answer);
         }
     }
 }
