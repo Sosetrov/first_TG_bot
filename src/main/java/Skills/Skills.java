@@ -1,8 +1,7 @@
 package Skills;
 
-
-
 public class Skills {
+
     private String toCommands(){
         return "Bot\s commands:\n" +
                 "/start - start the bot \n" +
@@ -16,7 +15,7 @@ public class Skills {
                 "/format - выбрать формат файла\n" +
                 "/convert - конвертировать файл в выбранный формат\n";
     }
-    private String toDefaultAnswer(){
+    public String toDefaultAnswer(){
         return "Я тебя не понимаю, напиши /help, чтобы увидеть список команд\n" +
                 "I don't understand you, type /help to see a list of commands\n";
     }
