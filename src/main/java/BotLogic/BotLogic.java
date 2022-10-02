@@ -9,7 +9,7 @@ public class BotLogic extends TelegramLongPollingBot {
         private final String BotUsername;
         private final String BotToken;
         //  private final
-        public BotLogic(){
+        public BotLogic(String BotUsername, String BotToken){
          this.BotUsername = BotUsername;
          this.BotToken = BotToken;
         }
@@ -26,7 +26,6 @@ public class BotLogic extends TelegramLongPollingBot {
 
         @Override
         public void onUpdateReceived(Update update) {
-            @Override
             public void onUpdateReceived(Update update) {
                 // We check if the update has a message and the message has text
                 if (update.hasMessage() && update.getMessage().hasText()) {
