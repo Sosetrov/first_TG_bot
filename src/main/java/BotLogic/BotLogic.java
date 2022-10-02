@@ -24,21 +24,19 @@ public class BotLogic extends TelegramLongPollingBot {
             return BotToken;
         }
 
-        @Override
-        public void onUpdateReceived(Update update) {
-            public void onUpdateReceived(Update update) {
-                // We check if the update has a message and the message has text
-                if (update.hasMessage() && update.getMessage().hasText()) {
-                    SendMessage message = new SendMessage(); // Create a SendMessage object with mandatory fields
-                    message.setChatId(update.getMessage().getChatId().toString());
-                    message.setText(update.getMessage().getText());
+    @Override
+    public void onUpdateReceived(Update update) {
+        // We check if the update has a message and the message has text
+        if (update.hasMessage() && update.getMessage().hasText()) {
+            SendMessage message = new SendMessage(); // Create a SendMessage object with mandatory fields
+            message.setChatId(update.getMessage().getChatId().toString());
+            message.setText(update.getMessage().getText());
 
-                    try {
-                        execute(message); // Call method to send the message
-                    } catch (TelegramApiException e) {
-                        e.printStackTrace();
-                    }
-                }
+            try {
+                execute(message); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
             }
         }
+    }
     }

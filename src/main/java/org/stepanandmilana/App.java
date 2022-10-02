@@ -15,7 +15,6 @@ public class App
 
         String TELEGRAM_BOT_USERNAME = System.getenv("TELEGRAM_BOT_USERNAME");
         String TELEGRAM_BOT_TOKEN = System.getenv("TELEGRAM_BOT_TOKEN");
-
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
             botsApi.registerBot(new BotLogic(TELEGRAM_BOT_USERNAME,TELEGRAM_BOT_TOKEN));
