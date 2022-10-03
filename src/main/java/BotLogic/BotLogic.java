@@ -31,7 +31,6 @@ public class BotLogic extends TelegramLongPollingBot {
         message.setChatId(update.getMessage().getChatId());
         if (update.hasMessage() && update.getMessage().hasText()) {
             StringBuilder answer = new StringBuilder("");
-            String userTextMessage;
             message.setText(update.getMessage().getText());
             String messageString = update.getMessage().getText();
             String[] messageWords = messageString.split(" ");
