@@ -24,3 +24,5 @@ hs_err_pid*
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/encodings.xml
+.idea/vcs.xml
+GitLesson/

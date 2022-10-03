@@ -17,6 +17,7 @@ public class Skills {
     }
     public static String toDefaultAnswer(){
         return "Я тебя не понимаю, напиши /help, чтобы увидеть список команд\n" +
+                "\n" +
                 "I don't understand you, type /help to see a list of commands\n";
     }
     private static String toStart(){
