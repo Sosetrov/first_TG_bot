@@ -22,7 +22,7 @@ public class App
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-        System.out.println("Hello, i'm bot");
+        System.out.println("Hello, i'm bot converter\n" + "\n" + "Привет, я бот-конвертер");
         kek cmd = new kek();
         cmd.responseForCMD();
     }
