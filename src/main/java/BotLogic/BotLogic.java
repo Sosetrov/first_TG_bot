@@ -8,7 +8,6 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class BotLogic extends TelegramLongPollingBot {
         private final String BotUsername;
         private final String BotToken;
-        //  private final
         public BotLogic(String BotUsername, String BotToken){
          this.BotUsername = BotUsername;
          this.BotToken = BotToken;
